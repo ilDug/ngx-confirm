@@ -1,2 +1,8 @@
 # ngx-confirm
-open a mat-dialog to get cofirmation
+A mat-dialog to get cofirmations. Bind it to a button.
+
+## Installation
+
+```
+npm i @ildug/ngx-confirm
+```
