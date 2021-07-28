@@ -1,24 +1,45 @@
-# NgxConfirm
+# ngx-confirm
+A mat-dialog to get cofirmations. Bind it to a button.
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+## Installation
 
-## Code scaffolding
+```
+npm i @ildug/ngx-confirm
+```
 
-Run `ng generate component component-name --project ngx-confirm` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-confirm`.
-> Note: Don't forget to add `--project ngx-confirm` or else it will be added to the default project in your `angular.json` file. 
 
-## Build
+## Usage
 
-Run `ng build ngx-confirm` to build the project. The build artifacts will be stored in the `dist/` directory.
+import the module into main app
 
-## Publishing
+``` typescript
+...
+import { NgxConfirmModule } from 'ngx-confirm';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+...
 
-After building your library with `ng build ngx-confirm`, go to the dist folder `cd dist/ngx-confirm` and run `npm publish`.
 
-## Running unit tests
+@NgModule({
+    declarations: [
+        AppComponent,
+    ],
+    imports: [
+        BrowserModule,
+        NgxConfirmModule,
+        ...
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-Run `ng test ngx-confirm` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Add the directive into a button. Bind the confrim event to the method to trigger.
 
-## Further help
+``` typescript
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<button dagConfirm (confirm)="doSomething()">delete</button>
+
+/* or pass a message*/
+<button dagConfirm="my message: Are your sure?" (confirm)="doSomething()">delete</button>
+``` 
