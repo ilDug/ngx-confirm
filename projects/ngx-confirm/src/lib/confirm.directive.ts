@@ -7,7 +7,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
 @Directive({
     selector: '[dagConfirm]'
 })
-export class ConfirmDirective implements OnDestroy {
+export class ConfirmDirective {
     constructor(
         private dialog: MatDialog
     ) { }
@@ -15,16 +15,16 @@ export class ConfirmDirective implements OnDestroy {
     @Input() dagConfirm: string;
     @Output() confirm = new EventEmitter();
 
-    private sub: Subscription;
 
     @HostListener('click')
     public openDialog() {
-        this.sub = this.dialog.open(ConfirmDialogComponent, { data: this.dagConfirm })
+        this.dialog.open(ConfirmDialogComponent, { data: this.dagConfirm })
             .afterClosed()
             .subscribe(
                 res => res ? this.confirm.emit(true) : null
             )
     }
 
-    ngOnDestroy() { this.sub.unsubscribe() }
+    // ngOnDestroy() { this.sub.unsubscribe() }
+    // private sub: Subscription;
 }
