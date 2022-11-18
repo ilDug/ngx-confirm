@@ -1,4 +1,7 @@
 # ngx-confirm
+
+[![Publish Node.js Package](https://github.com/ilDug/ngx-confirm/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/ilDug/ngx-confirm/actions/workflows/npm-publish.yml)
+
 A mat-dialog to get cofirmations. Bind it to a button.
 
 ## Installation
