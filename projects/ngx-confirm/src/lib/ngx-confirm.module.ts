@@ -1,23 +1,16 @@
 import { NgModule } from '@angular/core';
-import { ConfirmDirective } from './confirm.directive';
-import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
+import { NgxConfirmComponent } from './ngx-confirm.component';
 
 
 
 @NgModule({
-    declarations: [
-        ConfirmDirective,
-        ConfirmDialogComponent
-    ],
-    imports: [
-        MatDialogModule,
-        MatButtonModule,
-
-    ],
-    exports: [
-        ConfirmDirective
-    ]
+  declarations: [
+    NgxConfirmComponent
+  ],
+  imports: [
+  ],
+  exports: [
+    NgxConfirmComponent
+  ]
 })
 export class NgxConfirmModule { }
