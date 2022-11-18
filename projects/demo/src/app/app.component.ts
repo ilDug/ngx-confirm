@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
         <button mat-raised-button color="primary" dagConfirm="Are you Sure?" (confirm)="doSomething()">open</button>
         <p>{{result | json}}</p>
     </div>
-    
+
   `,
     styles: []
 })
