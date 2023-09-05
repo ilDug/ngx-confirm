@@ -2,7 +2,8 @@
 
     <div class="titles">
         <h1>ngx-confirm</h1>
-        <h3>ANGULAR - A mat-dialog to get cofirmation dialogs.</h3>
+        <h3>ANGULAR 16</h3>
+        <h4>A mat-dialog to get cofirmation dialogs.</h4>
 
         <!-- <h4>dagDrag</h4>
         <p>Assign a value to an element witch will be dragged</p>
@@ -11,7 +12,7 @@
         <h4>dagDrop</h4>
         <p>Listen for the drop event and get dropped data</p>
         <pre>&lt;div (dagDrop)="useItem($event)" &gt; drop here &lt;/div&gt;</pre> -->
-
+        <pre>&lt;a class=&quot;btn&quot; dagConfirm=&quot;Are you Sure?&quot; (confirm)=&quot;doSomething()&quot;&gt;confirm&lt;a&gt;</pre>
     </div>
 
     <div id="github">
@@ -24,10 +25,18 @@
 
     <div class="example">
 
-        <div style="text-align:center" class="content">
+        <p style="text-align: center;">
+            <a class="btn" dagConfirm="Are you Sure?" (confirm)="doSomething()">confirm</a>
+        </p>
+
+        <p>{{confirmationMsg}}</p>
+
+        <p><small><a href="#" (click)="reset()">reset</a></small></p>
+
+        <!-- <div style="text-align:center" class="content">
             <button mat-raised-button color="primary" dagConfirm="Are you Sure?" (confirm)="doSomething()">open</button>
             <p>{{result | json}}</p>
-        </div>
+        </div> -->
 
 
     </div>
