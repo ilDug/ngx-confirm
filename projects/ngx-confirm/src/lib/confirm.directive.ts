@@ -1,4 +1,4 @@
-import { Directive, EventEmitter, HostListener, Input, OnDestroy, Output } from '@angular/core';
+import { Directive, EventEmitter, HostListener, Input, OnDestroy, Output, effect, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop'
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
