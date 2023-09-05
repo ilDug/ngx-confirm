@@ -1,7 +1,6 @@
-import { Directive, EventEmitter, HostListener, Input, OnDestroy, Output } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { Subscription } from 'rxjs';
-import { tap, take } from 'rxjs/operators';
+import { Directive, EventEmitter, HostListener, Input, OnDestroy, Output, effect, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop'
+import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 @Directive({
@@ -24,7 +23,4 @@ export class ConfirmDirective {
                 res => res ? this.confirm.emit(true) : null
             )
     }
-
-    // ngOnDestroy() { this.sub.unsubscribe() }
-    // private sub: Subscription;
 }

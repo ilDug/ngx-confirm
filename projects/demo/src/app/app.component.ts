@@ -1,21 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-root',
-    template: `
-    <!--The content below is only a placeholder and can be replaced.-->
-    <div style="text-align:center" class="content">
-        <button mat-raised-button color="primary" dagConfirm="Are you Sure?" (confirm)="doSomething()">open</button>
-        <p>{{result | json}}</p>
-    </div>
-
-  `,
-    styles: []
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-    result: boolean = false;
+export class AppComponent implements OnInit {
+
+    public confirmationMsg: string
 
     doSomething() {
-        this.result = !this.result
+        this.confirmationMsg = "You have confirmed!"
+    }
+
+    reset() {
+        this.confirmationMsg = "Please, Confirm!";
+    }
+
+    ngOnInit(): void {
+        this.reset();
     }
 }
