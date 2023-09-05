@@ -1,6 +1,6 @@
 {
     "name": "@ildug/ngx-confirm",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "license": "MIT",
     "description": "a mat-dialog to get confirm",
     "author": {
@@ -9,14 +9,6 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/ilDug/ngx-confirm.git"
-    },
-    "peerDependencies": {
-        "@angular/common": ">12",
-        "@angular/core": ">12",
-        "@angular/cdk": ">12",
-        "@angular/material": ">12"
-    },
-    "dependencies": {
-        "tslib": "^2.3.0"
     }
+
 }
