@@ -1,6 +1,6 @@
 {
   "name": "@ildug/ngx-confirm",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "license": "MIT",
   "description": "a mat-dialog to get confirm",
   "author": {

@@ -1,19 +1,16 @@
-import { Directive, EventEmitter, HostListener, Input, OnDestroy, Output, effect, signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop'
-import { MatDialog } from '@angular/material/dialog';
-import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { Directive, EventEmitter, HostListener, Input, Output, inject } from '@angular/core';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from './confirm-dialog.component';
 
 @Directive({
-    selector: '[dagConfirm]'
+    selector: '[dagConfirm]',
+    standalone: true,
 })
-export class ConfirmDirective {
-    constructor(
-        private dialog: MatDialog
-    ) { }
+export class NgxConfirmDirective {
+    dialog = inject(MatDialog)
 
     @Input() dagConfirm: string;
     @Output() confirm = new EventEmitter();
-
 
     @HostListener('click')
     public openDialog() {
