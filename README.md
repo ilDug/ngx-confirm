@@ -15,28 +15,30 @@ npm i @ildug/ngx-confirm
 
 ## Usage
 
-import the module into main app
+import the diretive into your component:
 
 ``` typescript
 ...
-import { NgxConfirmModule } from 'ngx-confirm';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { NgxConfirmDirective } from 'ngx-confirm';
 ...
 
-
-@NgModule({
-    declarations: [
-        AppComponent,
-    ],
-    imports: [
-        BrowserModule,
-        NgxConfirmModule,
-        ...
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+@Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    standalone:true,
+    imports:[ ...,  NgxConfirmDirective]
 })
-export class AppModule { }
+export class AppComponent {
+
+    ....
+
+    doSomething() {
+        ....
+    }
+
+}
+
+
 ```
 
 Add the directive into a button. Bind the confrim event to the method to trigger.
