@@ -10,7 +10,7 @@ import { ConfirmDialogComponent } from './confirm-dialog.component';
         '[style.cursor]': '"pointer"' // imposta il cursore a "pointer" quando si passa sopra l'elemento
     }
 })
-export class ConfirmDirective {
+export class NgxConfirmDirective {
     private dialog = inject(MatDialog);
     ngxConfirm = input<string>(null, { alias: 'dagConfirm' }); //messaggio di conferma
     confirm = output<boolean>(); //emette un valore booleano che triggera l'azione passata 
