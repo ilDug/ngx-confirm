@@ -16,7 +16,7 @@ export class NgxConfirmDirective {
     confirm = output<boolean>(); //emette un valore booleano che triggera l'azione passata 
 
     openDialog() {
-        this.dialog.open(ConfirmDialogComponent, { data: this.ngxConfirm })
+        this.dialog.open(ConfirmDialogComponent, { data: this.ngxConfirm() })
             .afterClosed()
             .subscribe(
                 res => res ? this.confirm.emit(true) : null
