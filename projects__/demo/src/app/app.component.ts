@@ -1,14 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { NgxConfirmDirective } from 'ngx-confirm'
+import { MatButtonModule } from '@angular/material/button';
+import { NgxConfirmDirective } from 'ngx-confirm';
 
 @Component({
     selector: 'app-root',
-    standalone: true,
-    imports: [NgxConfirmDirective],
     templateUrl: './app.component.html',
-    styleUrl: './app.component.scss'
+    styleUrl: './app.component.scss',
+    standalone:true,
+    imports:[MatButtonModule, CommonModule, NgxConfirmDirective]
 })
 export class AppComponent implements OnInit {
+
     public confirmationMsg: string
 
     doSomething() {

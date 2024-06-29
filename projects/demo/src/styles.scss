@@ -1,2 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../../../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$colorMain: #3f51b5;
+
+.btn {
+    padding: 0.5rem 1rem;
+    color: rgb(103, 103, 103);
+    border: solid 1px;
+    border-radius: 5px;
+    text-decoration: none;
+    border-color: darken($colorMain, 10%);
+
+    &:hover {
+        background: darken($colorMain, 10%);
+    }
+}
+
+.btn + .btn {
+    margin-left: 1rem;
+}
+
+.btn-main {
+    background: $colorMain;
+    color: white;
+    border-color: darken($colorMain, 10%);
+    &:hover {
+        background: darken($colorMain, 10%);
+    }
+}

@@ -1,20 +1,30 @@
-import { Directive, EventEmitter, HostListener, Input, Output, inject } from '@angular/core';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { Directive, computed, inject, input, output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from './confirm-dialog.component';
 
 @Directive({
-    selector: '[dagConfirm]',
+    selector: '[ngxConfirm], [dagConfirm]',
     standalone: true,
+    host: {
+        '(click)': 'openDialog()', // listener per l'evento click
+        '[style.cursor]': '"pointer"' // imposta il cursore a "pointer" quando si passa sopra l'elemento
+    }
 })
 export class NgxConfirmDirective {
-    dialog = inject(MatDialog)
+    private dialog = inject(MatDialog);
+    private readonly defaultMessage = 'Confirm the action';
 
-    @Input() dagConfirm: string;
-    @Output() confirm = new EventEmitter();
+    ngxConfirm = input<string>(null); //messaggio di conferma
+    dagConfirm = input<string>(null); // vecchia direttiva per la compatibilità con la versione precedente
 
-    @HostListener('click')
-    public openDialog() {
-        this.dialog.open(ConfirmDialogComponent, { data: this.dagConfirm })
+    message = computed(() => {
+        return this.ngxConfirm() || this.dagConfirm() || this.defaultMessage;
+    })
+
+    confirm = output<boolean>(); //emette un valore booleano che triggera l'azione passata 
+
+    openDialog() {
+        this.dialog.open(ConfirmDialogComponent, { data: this.message() })
             .afterClosed()
             .subscribe(
                 res => res ? this.confirm.emit(true) : null
