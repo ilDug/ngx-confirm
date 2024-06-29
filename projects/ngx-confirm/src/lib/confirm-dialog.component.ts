@@ -9,5 +9,5 @@ import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
     styles: ``
 })
 export class ConfirmDialogComponent {
-    message: string = inject(MAT_DIALOG_DATA);
+    message = inject(MAT_DIALOG_DATA);
 }
