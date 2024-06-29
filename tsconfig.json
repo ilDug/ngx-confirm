@@ -12,6 +12,8 @@
         "moduleResolution": "bundler",
         "paths": {
           "ngx-confirm": [
+            "./projects/ngx-confirm/src",
+            "./projects/ngx-confirm/src/public-api",
             "./dist/ngx-confirm"
           ]
         },
