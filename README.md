@@ -2,7 +2,7 @@
 
 [![Publish Node.js Package](https://github.com/ilDug/ngx-confirm/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/ilDug/ngx-confirm/actions/workflows/npm-publish.yml)
 
-A mat-dialog to get cofirmations. Bind it to a button.
+A mat-dialog to get cofirmations. Use it with a button.
 
 [Demo](https://ildug.github.io/ngx-confirm/)
 
@@ -12,14 +12,13 @@ A mat-dialog to get cofirmations. Bind it to a button.
 npm i @ildug/ngx-confirm
 ```
 
-
 ## Usage
 
 import the diretive into your component:
 
-``` typescript
+```typescript
 ...
-import { NgxConfirmDirective } from 'ngx-confirm';
+import { NgxConfirmDirective } from '@ildug/ngx-confirm';
 ...
 
 @Component({
@@ -43,16 +42,32 @@ export class AppComponent {
 
 Add the directive into a button. Bind the confrim event to the method to trigger.
 
-``` html
-
-<button dagConfirm (confirm)="doSomething()">delete</button>
+```html
+<button ngxConfirm (confirm)="doSomething()">delete</button>
 
 /* or pass a custom message*/
-<button dagConfirm="my message: Are your sure?" (confirm)="doSomething()">delete</button>
-``` 
+<button ngxConfirm="my message: Are your sure?" (confirm)="doSomething()">delete</button>
+```
 
-To get a nice behaviour, import Angular Material Theme.
+## Style
+
+Be sure to,import Angular Material Theme, in order to get a nice behaviour.
 
 ```scss
-@import "../../../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "@angular/material/prebuilt-themes/azure-blue.css";
+```
+
+To style buttons , you have to define some class:
+
+```scss
+
+// with aphrodite-sass
+.btn{...}
+.btn-main{...}
+
+// or alternatively
+.ngx-confirm-btn{...}
+.ngx-confirm-btn-main{...}
+.ngx-confirm-btn-cancel{...}
+
 ```
